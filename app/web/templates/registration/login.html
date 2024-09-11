@@ -1,0 +1,75 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Administracion de Prestamos</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Encabezado */
+        header {
+            background-color: #0074D9;
+            color: #fff;
+            text-align: center;
+            padding: 1rem;
+        }
+
+        /* Contenedor principal */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Formulario de inicio de sesión */
+        .login-form {
+            max-width: 400px;
+            margin: 0 auto;
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 0.5rem;
+            margin-bottom: 1rem;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .login-form button {
+            background-color: #0074D9;
+            color: #fff;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Administracion de Prestamos</h1>
+    </header>
+    <div class="container">
+        <h2>Iniciar Sesión</h2>
+        <form class="login-form" method="post" action="/accounts/login/">
+            {% csrf_token %}
+            <input type="text" id="login" name="username" placeholder="Usuario">
+            <input type="password" id="login" name="password" placeholder="Contraseña">
+            <button type="submit">Ingresar</button>
+            <button type="button" onclick="window.location.href='/registrar/'">Registrar</button>
+        </form>
+    </div>
+</body>
+</html>
